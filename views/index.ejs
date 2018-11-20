@@ -72,15 +72,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header">
     <div class="container">
         <div class="logo">
-            <a href="/index"><span>Find</span>Stuff</a>
+            <a href="/"><span>Find</span>Stuff</a>
         </div>
+        <% if (data.on90){ %>
+        <form action="/logout" method="post">
         <div class="header-right">
-            <a class="account" href="/login">login</a>
-
+            <button class="btn btn-success btn-lg" >Want To Log Out ? <%=data.name%></button>
             <script>
                 $('#myModal').modal('');
             </script>
         </div>
+        </form>
+        <%}%>
+        <% if (!data.on90){ %>
+
+        <div class="header-right">
+            <a class="account" href="/login">Login</a>
+            <script>
+                $('#myModal').modal('');
+            </script>
+        </div>
+        <%}%>
+
     </div>
 </div>
 </div>
@@ -96,7 +109,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
 
             <div class="col-md-2 focus-grid">
-                <a href="categories.html#parentVerticalTab2">
+                <a href="/electronics">
                     <div class="focus-border">
                         <div class="focus-layout">
                             <div class="focus-image"><i class="fa fa-laptop"></i></div>
@@ -108,7 +121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
             <div class="col-md-2 focus-grid">
-                <a href="categories.html#parentVerticalTab7">
+                <a href="/books">
                     <div class="focus-border">
                         <div class="focus-layout">
                             <div class="focus-image"><i class="fa fa-book"></i></div>
@@ -119,7 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
 
             <div class="col-md-2 focus-grid">
-                <a href="categories.html#parentVerticalTab10">
+                <a href="/others">
                     <div class="focus-border">
                         <div class="focus-layout">
                             <div class="focus-image"><i class="fa fa-shield"></i></div>
@@ -129,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </a>
             </div>
             <div class="col-md-2 focus-grid">
-                <a href="categories.html">
+                <a href="/mobiles">
                     <div class="focus-border">
                         <div class="focus-layout">
                             <div class="focus-image"><i class="fa fa-mobile"></i></div>
@@ -139,7 +152,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </a>
             </div>
             <div class="col-md-2 focus-grid">
-                <a href="categories.html">
+                <a href="/cooler">
                     <div class="focus-border">
                         <div class="focus-layout">
                             <div class="focus-image"><i class="fa fa-cooler"></i></div>
@@ -217,7 +230,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
             </div>
             <div class="copyrights">
-                <p> Find Stuff. All Rights Reserved | Design by  Piyush Devansh and Aman Raj</a></p>
+                <p> Find Stuff. All Rights Reserved | Design by  Piyush Devansh and Aman Raj</p>
             </div>
             <div class="clearfix"></div>
         </div>

@@ -109,17 +109,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header">
     <div class="container">
         <div class="logo">
-            <a ><span>Find</span>Stuff</a>
+            <a href="/" ><span>Find</span>Stuff</a>
         </div>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;<form action="/logout" method="post">&nbsp;&nbsp;&nbsp;&nbsp;
         <div class="header-right">
-            <a class="account" >Want To Log Out ? <%=data.name%></a>
+            <button class="btn btn-success btn-lg" >Want To Log Out ? <%=data.name%></button>
             <script>
                 $('#myModal').modal('');
             </script>
         </div>
-
+        </form>
     </div>
 </div>
 </div>
@@ -195,14 +195,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <option value="Books">Books</option>
                                 <option value="Mobiles">Mobiles</option>
                                 <option value="coolers">Coolers</option>
-                                <option value="coolers">Others</option>
+                                <option value="Others">Others</option>
                             </select>
                         </div>
 
                     </div>
                     <div class="log-input">
                         <div class="log-input-left">
-                            <input type="text" class="user" name="product_name" value="Product Name" />
+                            <input type="text" class="user" name="product_name" value="Product Name " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Product Name';}"/>
                         </div>
 
                     </div>
