@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Stuff-K.N.I.T. </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Find Stuff Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <!--fonts-->
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+    <!-- js -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- js -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <style>
+        .modal  {
+            /*   display: block;*/
+            padding-right: 0px;
+            background-color: rgba(4, 4, 4, 0.8);
+        }
+
+        .modal-dialog {
+            top: 20%;
+            width: 100%;
+            position: absolute;
+        }
+        .modal-content {
+            border-radius: 0px;
+            border: none;
+            top: 40%;
+        }
+        .modal-body {
+            background-color: #0f8845;
+            color: white;
+        }
+
+        .account{
+            cursor: pointer;
+        }
+        #branch
+        {
+            width:98%;
+            padding:12px 12px;
+            margin:8px 0;
+            display:inline-block;
+            border:1px solid #ccc;
+            border-radius:4px;
+            box-sizing:border-box;
+            color: #0f8845;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            var mySelect = $('#first-disabled2');
+
+            $('#special').on('click', function () {
+                mySelect.find('option:selected').prop('disabled', true);
+                mySelect.selectpicker('refresh');
+            });
+
+            $('#special2').on('click', function () {
+                mySelect.find('option:disabled').prop('disabled', false);
+                mySelect.selectpicker('refresh');
+            });
+
+            $('#basic2').selectpicker({
+                liveSearch: true,
+                maxOptions: 1
+            });
+        });
+    </script>
+    <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+    <link href="css/jquery.uls.css" rel="stylesheet"/>
+    <link href="css/jquery.uls.grid.css" rel="stylesheet"/>
+    <link href="css/jquery.uls.lcd.css" rel="stylesheet"/>
+    <!-- Source -->
+    <script src="js/jquery.uls.data.js"></script>
+    <script src="js/jquery.uls.data.utils.js"></script>
+    <script src="js/jquery.uls.lcd.js"></script>
+    <script src="js/jquery.uls.languagefilter.js"></script>
+    <script src="js/jquery.uls.regionfilter.js"></script>
+    <script src="js/jquery.uls.core.js"></script>
+    <script>
+        $( document ).ready( function() {
+            $( '.uls-trigger' ).uls( {
+                onSelect : function( language ) {
+                    var languageName = $.uls.data.getAutonym( language );
+                    $( '.uls-trigger' ).text( languageName );
+                },
+                quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
+            } );
+        } );
+    </script>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="logo">
+            <a ><span>Find</span>Stuff</a>
+        </div>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="header-right">
+            <a class="account" >Want To Log Out ? <%=data.name%></a>
+            <script>
+                $('#myModal').modal('');
+            </script>
+        </div>
+
+    </div>
+</div>
+</div>
+<div class="main-banner banner text-center">
+    <div class="container">
+        <h1>Sell and Buy   <span class="segment-heading">    anything online </span> with Find Stuff</h1>
+
+    </div>
+</div>
+<br> <br> <br> <br>
+<div align="center">
+    <div class="row">
+    <div class="col-sm-3 col-md-2 col-5">
+        <label style="font-weight:bold;">Full Name</label>
+    </div>
+    <div class="col-md-8 col-6">
+        <%= data.name %>
+    </div>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-sm-3 col-md-2 col-5">
+        <label style="font-weight:bold;">Email</label>
+    </div>
+    <div class="col-md-8 col-6">
+        <%= data.email %>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-sm-3 col-md-2 col-5">
+        <label style="font-weight:bold;">Address</label>
+    </div>
+    <div class="col-md-8 col-6">
+        <%= data.address%>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-sm-3 col-md-2 col-5">
+        <label style="font-weight:bold;">Contact Number</label>
+    </div>
+    <div class="col-md-8 col-6">
+        <%= data.no%>
+    </div>
+</div>
+</div>
+<br> <br>
+<div class="col-md-5"></div>
+<div class = "col-md-6" align="center">
+    <a class="account" data-toggle="modal" data-target=".bs-example-modal-lg" >Want To Sell Something</a>
+
+    <script>
+        $('#myModal').modal('');
+    </script>
+</div>
+
+<br> <br> <br>
+
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-body">
+
+                <form action="/dick" method="post">
+                    <div class="log-input">
+                        <div class="log-input-left">
+                            <select class="user" name="product_type" id="branch">
+                                <option value="Electronics & Appliances">Electronics & Appliances</option>
+                                <option value="Books">Books</option>
+                                <option value="Mobiles">Mobiles</option>
+                                <option value="coolers">Coolers</option>
+                                <option value="coolers">Others</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="log-input">
+                        <div class="log-input-left">
+                            <input type="text" class="user" name="product_name" value="Product Name" />
+                        </div>
+
+                    </div>
+                    <div class="log-input">
+                        <div class="log-input-left">
+                            <input type="text" class="user" name="description" value="Description (Not more than 50 words) " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Description';}"/>
+                        </div>
+
+                    </div>
+                    <div class="log-input">
+                        <div class="log-input-left">
+                            <input type="text" class="user" name="price" value="Price" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Price';}"/>
+                        </div>
+
+                    </div>
+                    <div class="sub_home_right" id="button">
+                        <button class="btn btn-success btn-lg" type="submit" value="ADD">ADD</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<br> <br><br><br>
+<div  align="center">
+    <h2 align="center">Your Pending Items :-</h2>
+</div>
+<br> <br>
+<div class="container">
+    <div class="row">
+        <div class="span5">
+            <table class="table table-striped table-condensed">
+                <thead>
+                <tr>
+                    <th><strong>Product ID</strong></th>
+                    <th><strong>Product Type</strong></th>
+                    <th><strong>Product Name</strong></th>
+                    <th><strong>Price</strong></th>
+                    <th><strong>Status</strong></th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for(var i=0;i<data1.length ;i++)
+                 { %>
+
+                <form action="/deleteByID" method="post">
+                <tr>
+                    <td><%= data1[i].id %> </td>
+                    <input value=<%= data1[i].id %> type="hidden" name="prodID">
+                    <td><%= data1[i].product_type %> </td>
+                    <td><%= data1[i].product_name %> </td>
+                    <td><%= data1[i].price %> </td>
+                    <td><input type="submit" value="DELETE"></td>
+                </tr>
+                </form>
+
+                <% }%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
