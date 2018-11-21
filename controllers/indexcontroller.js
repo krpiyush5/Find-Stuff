@@ -163,22 +163,34 @@ module.exports=function (app, con) {
             var address = req.body.address;
             var contact = req.body.contact;
             var conpassword = req.body.conpassword;
-            if (password == conpassword) {
-                var sql = "INSERT INTO auth (name, email,no,address,password) VALUES " + "('" + name + "', '" + email + "', '" + contact + "', '" + address + "','" + password + "')";
-                //console.log(sql);
-                con.query(sql, function (err, result) {
-                    if (err) {
-                        console.log('error');
+            con.query('SELECT * FROM auth WHERE email=?',[email],function (errro,resul) {
+
+                if(resul.length>0)
+                {
+                    res.render('error');
+                }
+                else{
+
+                    if (password == conpassword) {
+                        var sql = "INSERT INTO auth (name, email,no,address,password) VALUES " + "('" + name + "', '" + email + "', '" + contact + "', '" + address + "','" + password + "')";
+                        //console.log(sql);
+                        con.query(sql, function (err, result) {
+                            if (err) {
+                                console.log('error');
+                            }
+                            else {
+                                console.log('1 item inserted');
+                                res.render('login');
+                            }
+                        });
                     }
                     else {
-                        console.log('1 item inserted');
-                        res.render('login');
+                        res.send('password does not match','showAlert');
                     }
-                });
-            }
-            else {
-                res.send('password does not match')
-            }
+
+                }
+            });
+
         }
     });
 
