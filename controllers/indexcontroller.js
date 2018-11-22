@@ -185,7 +185,7 @@ module.exports=function (app, con) {
                         });
                     }
                     else {
-                        res.send('password does not match','showAlert');
+                        res.render('error');
                     }
 
                 }

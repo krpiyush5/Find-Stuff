@@ -1,6 +1,9 @@
 var express=require('express');
 var app=express();
 
+
+var upload = require('express-fileupload');
+
 var bodyParser=require('body-parser');
 
 var mysql=require('mysql');
@@ -21,7 +24,7 @@ var connection=mysql.createConnection({
 });
 
 connection.connect(function (err) {
-   if(err){
+   if(!!err){
       console.log('error');
    }
    else{
