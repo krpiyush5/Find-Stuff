@@ -4,7 +4,7 @@ var app=express();
 
 var upload = require('express-fileupload');
 
-const bcrypt=require('bcrypt');
+
 
 var bodyParser=require('body-parser');
 

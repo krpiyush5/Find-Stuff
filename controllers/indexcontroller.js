@@ -4,6 +4,7 @@ module.exports=function (app, con) {
 
   var session=require('express-session');
 
+    var bcrypt=require('bcrypt');
 
   // relevant-middlewares
   app.use(session({secret:'piyush'}));
@@ -118,8 +119,10 @@ module.exports=function (app, con) {
                             req.session.address = result[0].address;
                             req.session.contact = result[0].no;
                             req.session.online = true;
-
-                            if (result[0].password == password) {
+                            var hash=bcrypt.hashSync(password,10);
+                            console.log(hash);
+                            //console.log(result[0].password);
+                            if (result[0].password==password) {
                                 con.query("SELECT * FROM products WHERE seller_name=?", [req.session.name], function (error, result1) {
                                     console.log(result1.length);
                                     req.session.val = result1;
@@ -172,6 +175,9 @@ module.exports=function (app, con) {
                 else{
 
                     if (password == conpassword) {
+
+                        var hash=bcrypt.hashSync(password,10);
+                       // console.log(hash.length);
                         var sql = "INSERT INTO auth (name, email,no,address,password) VALUES " + "('" + name + "', '" + email + "', '" + contact + "', '" + address + "','" + password + "')";
                         //console.log(sql);
                         con.query(sql, function (err, result) {
