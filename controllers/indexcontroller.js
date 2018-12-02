@@ -120,7 +120,7 @@ module.exports=function (app, con) {
                             req.session.contact = result[0].no;
                             req.session.online = true;
                             var hash=bcrypt.hashSync(password,10);
-                            console.log(hash);
+                           // console.log(hash);
                             //console.log(result[0].password);
                             if (result[0].password==password) {
                                 con.query("SELECT * FROM products WHERE seller_name=?", [req.session.name], function (error, result1) {
