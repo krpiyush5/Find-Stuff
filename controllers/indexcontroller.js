@@ -154,7 +154,7 @@ module.exports=function (app, con) {
     });
 
 
-    app.post('/xxx',function (req,res) {
+    app.post('/sign',function (req,res) {
         if (!true){
             console.log('reg required');
         }
@@ -200,7 +200,7 @@ module.exports=function (app, con) {
         }
     });
 
-    app.post('/dick',function (req,res) {
+    app.post('/insert',function (req,res) {
         if (!on9(req,res)){
             console.log('login required');
         }
@@ -211,7 +211,8 @@ module.exports=function (app, con) {
             var prod_name = req.body.product_name;
             var description = req.body.description;
             var price = req.body.price;
-            var sql = "INSERT INTO products (product_type, seller_name,product_name,description,price,contact,Address) VALUES " + "('" + prod_type + "', '" + name + "', '" + prod_name + "', '" + description + "','" + price + "', '" + req.session.contact + "', '" + req.session.address + "')";
+            var sql = "INSERT INTO products (product_type, seller_name,product_name,description,price,contact,Address,seller_email) VALUES " + "('" + prod_type + "', '" + name + "', '" + prod_name + "', '" + description + "','" + price + "', '" + req.session.contact + "', '" + req.session.address + "', '" + req.session.email +"')";
+            console.log(sql);
             con.query(sql, function (err, result) {
                 if (err) {
                     console.log('errwa');
